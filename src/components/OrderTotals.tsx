@@ -19,7 +19,7 @@ export default function OrderTotals({order, tip, saveOrder} : OrderTotalsProps) 
       <div className=" space-y-4 md:space-y-6">
         <h2 className=' text-2xl font-bold text-center md:text-3xl'>Totales y Propina</h2>
 
-        <div className=" bg-gray-200 py-5 px-10">
+        <div className=" bg-slate-200 py-5 px-10">
           <p className=" text-base font-bold flex justify-between md:text-lg">Subtotal: <span className=" font-semibold">{formatCurrency(subTotalAmount)}</span></p>
           <p className=" text-base font-bold flex justify-between md:text-lg">Propina: <span className=" font-semibold">{formatCurrency(tipAmount)}</span></p>
           <p className=" text-base font-bold flex justify-between md:text-lg">Total: <span className=" font-semibold">{formatCurrency(totalAmount)}</span></p>

@@ -11,10 +11,10 @@ function App() {
   const { order, tip, setTip, addItem, handleClickIncrease, handleClickDecrease, removeItem, saveOrder } = useOrder()
 
   return (
-    <>
+    <div>
       <Header />
 
-      <main className=" max-w-7xl h-[calc(100vh-80px)] overflow-y-scroll mx-auto space-y-6 md:space-y-0 grid md:grid-cols-2 py-8 md:py-10">
+      <main className="scrollbar-custom max-w-7xl h-[calc(100vh-85px)] overflow-y-scroll mx-auto space-y-6 md:space-y-0 grid md:grid-cols-2 py-8 md:py-10">
         <div className=" px-3 md:px-5">
           <h2 className=" text-3xl font-black text-center md:text-4xl">Menú</h2>
 
@@ -58,7 +58,7 @@ function App() {
           </div>
         </div>
       </main>
-    </>
+    </div>
   )
 }
 

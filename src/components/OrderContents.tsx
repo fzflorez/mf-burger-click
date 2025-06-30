@@ -27,7 +27,7 @@ export default function OrderContents({order, handleClickIncrease, handleClickDe
               <p className=" text-base font-bold md:text-lg">{item.quantity}</p>
               <button 
                 type="button" 
-                className=" w-6 h-6 rounded-full bg-orange-400 text-white text-lg font-bold md:w-6 md:h-6 md:xl"
+                className=" w-6 h-6 rounded-full bg-orange-400 text-white text-lg font-bold md:w-6 md:h-6 md:xl leading-none"
                 onClick={() => handleClickIncrease(item)}
               >
                 <span className=" relative -top-0.5">+</span>

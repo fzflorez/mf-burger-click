@@ -9,7 +9,7 @@ type MenuItemListProps = {
 export default function MenuItemList({item, addItem} : MenuItemListProps) {
   return (
     <button 
-      className=" w-full flex justify-between items-center border-2 border-gray-600 rounded-lg px-3 py-2 hover:bg-gray-300 md:px-4"
+      className=" w-full flex justify-between items-center border-2 border-gray-600 rounded-lg px-3 py-3 hover:bg-gray-300 md:px-4 md:py-2"
       onClick={() => addItem(item)}
     >
       <div className=" text-left">
