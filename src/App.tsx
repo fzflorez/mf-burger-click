@@ -7,6 +7,9 @@ import TipPrecentajeForm from "./components/TipPrecentajeForm";
 import { menuItems } from "./data/db";
 import useOrder from "./hooks/useOrder";
 import { XMarkIcon } from "@heroicons/react/24/solid";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function App() {
   const {
@@ -23,6 +26,14 @@ function App() {
     removeItem,
     saveOrder,
   } = useOrder();
+
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      once: true,
+      easing: "ease-out-back",
+    });
+  }, []);
 
   return (
     <>
@@ -54,8 +65,8 @@ function App() {
           </button>
 
           {openModalOrder && (
-            <div className="fixed inset-0 bg-black/60 flex justify-end">
-              <div className="w-full max-w-md h-screen overflow-y-scroll scrollbar-custom bg-slate-50 shadow-lg sm:rounded-l-xl py-8 px-6">
+            <div  className="fixed inset-0 bg-black/60 flex justify-end">
+              <div data-aos="fade-left" className="w-full max-w-md h-screen overflow-y-scroll scrollbar-custom bg-slate-50 shadow-lg sm:rounded-l-xl py-8 px-6">
                 <button
                   onClick={() => setOpenModalOrder(false)}
                   className="w-full flex justify-end"
