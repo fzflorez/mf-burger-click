@@ -14,7 +14,7 @@ export default function MenuItemList({ item, addItem }: MenuItemListProps) {
     >
       <div className="space-y-1">
         <p className="text-lg font-semibold sm:text-xl">{item.name}</p>
-        <p className="text-sm sm:text-base text-gray-600">{item.description}</p>
+        <p className="text-sm sm:text-base text-gray-500">{item.description}</p>
       </div>
 
       <p className="text-lg font-semibold sm:text-xl text-orange-400">

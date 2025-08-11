@@ -10,6 +10,7 @@ export default function useOrder() {
   const [order, setOrder] = useState<OrderItem[]>(initialOrder);
   const [tip, setTip] = useState(0);
   const [openModalOrder, setOpenModalOrder] = useState(false);
+  const [openModalPlaceOrder, setOpenModalPlaceOrder] = useState(false);
 
   useEffect(() => {
     localStorage.setItem("order", JSON.stringify(order));
@@ -61,7 +62,10 @@ export default function useOrder() {
   const saveOrder = () => {
     setOrder([]);
     setTip(0);
+    setOpenModalOrder(false)
+    setOpenModalPlaceOrder(true)
   };
+  console.log(openModalPlaceOrder)
 
   return {
     order,
@@ -69,6 +73,8 @@ export default function useOrder() {
     setTip,
     openModalOrder,
     setOpenModalOrder,
+    openModalPlaceOrder,
+    setOpenModalPlaceOrder,
     addItem,
     handleClickIncrease,
     handleClickDecrease,
