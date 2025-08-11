@@ -1,7 +1,7 @@
 export default function Header() {
   return (
     <header className="p-6 bg-slate-800">
-      <div className=" max-w-screen-xl w-full mx-auto flex justify-center sm:justify-between items-center">
+      <div className="max-w-screen-xl w-full mx-auto flex justify-center sm:justify-between items-center">
         <div className="flex items-center gap-3">
           <div className="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center font-bold text-lg sm:text-xl text-white">
             B

@@ -44,11 +44,11 @@ function App() {
             <div className="relative">
               <div className="w-12 lg:w-14 p-3 bg-slate-900 rounded-full text-white fixed bottom-6 right-6">
                 <ClipboardDocumentListIcon />
-                  {order.length > 0 &&  (
-                    <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-full text-xs sm:text-sm font-semibold flex justify-center items-center bg-orange-500 absolute -top-2 sm:-top-3 right-0">
-                      {order.reduce((total, item) => total + item.quantity, 0)}
-                    </div>
-                  )}             
+                {order.length > 0 && (
+                  <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-full text-xs sm:text-sm font-semibold flex justify-center items-center bg-orange-500 absolute -top-2 sm:-top-3 right-0">
+                    {order.reduce((total, item) => total + item.quantity, 0)}
+                  </div>
+                )}
               </div>
             </div>
           </button>
@@ -63,7 +63,9 @@ function App() {
                   <XMarkIcon className="w-8 h-8 p-1 rounded-full hover:bg-gray-200 transition duration-300 ease-in-out" />
                 </button>
 
-                <h2 className="text-2xl font-black text-center sm:text-3xl">Tu Pedido</h2>
+                <h2 className="text-2xl font-black text-center sm:text-3xl">
+                  Tu Pedido
+                </h2>
 
                 <div className="mt-6">
                   {order.length ? (
@@ -77,7 +79,11 @@ function App() {
 
                       <TipPrecentajeForm tip={tip} setTip={setTip} />
 
-                      <OrderTotals order={order} tip={tip} saveOrder={saveOrder} />
+                      <OrderTotals
+                        order={order}
+                        tip={tip}
+                        saveOrder={saveOrder}
+                      />
                     </>
                   ) : (
                     <p className="text-lg text-center">La orden está vacía.</p>
@@ -90,9 +96,14 @@ function App() {
           {openModalPlaceOrder && (
             <div className="fixed inset-0 bg-black/60 flex items-center justify-center p-4">
               <div className="bg-white rounded-lg shadow-xl p-6 text-center max-w-md">
-                <h2 className="text-2xl font-black sm:text-3xl">¡Pedido Recibido!</h2>
-                <p className="text-base sm:text-lg text-gray-500 mb-6">Gracias por tu compra. Tu pedido está en preparación y estará listo en breve.</p>
-                <button 
+                <h2 className="text-2xl font-black sm:text-3xl">
+                  ¡Pedido Recibido!
+                </h2>
+                <p className="text-base sm:text-lg text-gray-500 mb-6">
+                  Gracias por tu compra. Tu pedido está en preparación y estará
+                  listo en breve.
+                </p>
+                <button
                   className="w-full bg-orange-500 text-white text-base sm:text-lg font-semibold p-3 rounded-lg hover:bg-orange-400 transition duration-300 ease-in-out"
                   onClick={() => setOpenModalPlaceOrder(false)}
                 >

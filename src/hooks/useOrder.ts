@@ -62,10 +62,10 @@ export default function useOrder() {
   const saveOrder = () => {
     setOrder([]);
     setTip(0);
-    setOpenModalOrder(false)
-    setOpenModalPlaceOrder(true)
+    setOpenModalOrder(false);
+    setOpenModalPlaceOrder(true);
   };
-  console.log(openModalPlaceOrder)
+  console.log(openModalPlaceOrder);
 
   return {
     order,
