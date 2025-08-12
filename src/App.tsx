@@ -39,8 +39,8 @@ function App() {
     <>
       <Header />
 
-      <main className="max-w-7xl mx-auto space-y-6 md:space-y-0 grid py-8 md:py-10 relative">
-        <div className="px-3 md:px-5 relative">
+      <main className="max-w-7xl mx-auto grid py-8 md:py-10">
+        <div className="px-3 md:px-5">
           <h2 className="text-2xl font-black text-center sm:text-3xl">Menú</h2>
 
           <div className="mt-6 sm:mt-8 grid sm:grid-cols-2 xl:grid-cols-3 gap-4">
@@ -51,17 +51,13 @@ function App() {
         </div>
 
         <div>
-          <button onClick={() => setOpenModalOrder(true)}>
-            <div className="relative">
-              <div className="w-12 lg:w-14 p-3 bg-slate-900 rounded-full text-white fixed bottom-6 right-6">
-                <ClipboardDocumentListIcon />
-                {order.length > 0 && (
-                  <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-full text-xs sm:text-sm font-semibold flex justify-center items-center bg-orange-500 absolute -top-2 sm:-top-3 right-0">
-                    {order.reduce((total, item) => total + item.quantity, 0)}
-                  </div>
-                )}
+          <button onClick={() => setOpenModalOrder(true)}  className="w-12 lg:w-14 p-3 bg-slate-900 rounded-full text-white fixed bottom-6 right-6 ">
+            <ClipboardDocumentListIcon />
+            {order.length > 0 && (
+              <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-full text-xs sm:text-sm font-semibold flex justify-center items-center bg-orange-500 absolute -top-2 sm:-top-3 right-0">
+                {order.reduce((total, item) => total + item.quantity, 0)}
               </div>
-            </div>
+            )}             
           </button>
 
           {openModalOrder && (
